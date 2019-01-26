@@ -34,4 +34,96 @@ let statsObj = {
     "other": { raceModActive: true }
   };
 
-  export {statsObj, raceObj};
+let classObj = {
+    "cleric": {
+        "hd": 8,
+        "bab": .75,
+        "fort": "good",
+        "ref": "bad",
+        "will": "good",
+        "skills": 2
+    },
+    "bard": {
+        "hd": 8,
+        "bab": .75,
+        "fort": "bad",
+        "ref": "good",
+        "will": "good",
+        "skills": 6
+    },
+    "barbarian": {
+        "hd": 12,
+        "bab": 1,
+        "fort": "good",
+        "ref": "bad",
+        "will": "bad",
+        "skills": 4
+
+    },
+    "fighter": {
+        "hd": 10,
+        "bab": 1,
+        "fort": "good",
+        "ref": "bad",
+        "will": "bad",
+        "skills": 2
+    },
+    "druid": {
+        "hd": 8,
+        "bab": .75,
+        "fort": "good",
+        "ref": "bad",
+        "will": "good",
+        "skills": 4
+    },
+    "rogue": {
+        "hd": 8,
+        "bab": .75,
+        "fort": "bad",
+        "ref": "good",
+        "will": "bad",
+        "skills": 8
+    },
+    "monk": {
+        "hd": 8,
+        "bab": .75,
+        "fort": "good",
+        "ref": "good",
+        "will": "good",
+        "skills": 4
+    },
+    "paladin": {
+        "hd": 10,
+        "bab": 1,
+        "fort": "good",
+        "ref": "bad",
+        "will": "good",
+        "skills": 2
+    },
+    "ranger": {
+        "hd": 10,
+        "bab": 1,
+        "fort": "good",
+        "ref": "good",
+        "will": "bad",
+        "skills": 6
+    },
+    "sorcerer": {
+        "hd": 6,
+        "bab": .5,
+        "fort": "bad",
+        "ref": "bad",
+        "will": "good",
+        "skills": 2
+    },
+    "wizard": {
+        "hd": 6,
+        "bab": .5,
+        "fort": "bad",
+        "ref": "bad",
+        "will": "good",
+        "skills": 2
+    }
+}
+
+  export {statsObj, raceObj, classObj};

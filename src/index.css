@@ -1,15 +1,11 @@
-.stat-selector {
-    height: 26px;
+#points {
+    padding: 12px 0 0 0;
+    margin: 0;
 }
 
-input {
-    width: 100%;
+ 
+
+.container {
+    margin-top: 20px;
 }
 
-select {
-    width: 100%;
-}
-
-.row {
-    margin-top: 4px;
-}

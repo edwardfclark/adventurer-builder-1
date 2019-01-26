@@ -6,15 +6,57 @@ import StatsSelector from './StatsSelector'
 // Race is set on another component and its value is passed down as a prop.
 // StatsSelector is a reusable component.
 const Stats = (props) => {
-    console.log(props);
     return (
         <div>
-            <StatsSelector selectorId="strength" statVal={props.stats.strength} handleStatsChange={props.handleStatsChange}/>
-            <StatsSelector selectorId="dexterity" statVal={props.stats.dexterity} handleStatsChange={props.handleStatsChange}/>
-            <StatsSelector selectorId="constitution" statVal={props.stats.constitution} handleStatsChange={props.handleStatsChange}/>
-            <StatsSelector selectorId="intelligence" statVal={props.stats.intelligence} handleStatsChange={props.handleStatsChange}/>
-            <StatsSelector selectorId="wisdom" statVal={props.stats.wisdom} handleStatsChange={props.handleStatsChange}/>
-            <StatsSelector selectorId="charisma" statVal={props.stats.charisma} handleStatsChange={props.handleStatsChange}/>
+            <StatsSelector 
+            selectorId="strength" 
+            raceVal={props.stats.strength.race} 
+            statVal={props.stats.strength.total} 
+            handleStatsChange={props.handleStatsChange} 
+            raceModActive={props.raceModActive}
+            handleRaceModChange={props.handleRaceModChange}
+            />
+            <StatsSelector 
+            selectorId="dexterity" 
+            raceVal={props.stats.dexterity.race} 
+            statVal={props.stats.dexterity.total} 
+            handleStatsChange={props.handleStatsChange} 
+            raceModActive={props.raceModActive}
+            handleRaceModChange={props.handleRaceModChange}
+            />
+            <StatsSelector 
+            selectorId="constitution" 
+            raceVal={props.stats.constitution.race} 
+            statVal={props.stats.constitution.total} 
+            handleStatsChange={props.handleStatsChange} 
+            raceModActive={props.raceModActive}
+            handleRaceModChange={props.handleRaceModChange}
+            />
+            <StatsSelector 
+            selectorId="intelligence" 
+            raceVal={props.stats.intelligence.race} 
+            statVal={props.stats.intelligence.total} 
+            handleStatsChange={props.handleStatsChange} 
+            raceModActive={props.raceModActive}
+            handleRaceModChange={props.handleRaceModChange}
+            />
+            <StatsSelector 
+            selectorId="wisdom" 
+            raceVal={props.stats.wisdom.race} 
+            statVal={props.stats.wisdom.total} 
+            handleStatsChange={props.handleStatsChange} 
+            raceModActive={props.raceModActive}
+            handleRaceModChange={props.handleRaceModChange}
+            />
+            <StatsSelector 
+            selectorId="charisma" 
+            raceVal={props.stats.charisma.race} 
+            statVal={props.stats.charisma.total} 
+            handleStatsChange={props.handleStatsChange} 
+            raceModActive={props.raceModActive}
+            handleRaceModChange={props.handleRaceModChange}
+            />
+            
         </div>
     )
 

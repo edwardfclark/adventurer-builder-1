@@ -4,11 +4,11 @@ const Race = (props) => {
     
     return (
         <div className="row">
-            <div className="col-xs-2">
+            <div className="col-3">
                 <label htmlFor="race">Race: </label>
             </div>
-            <div className="col-xs-10">
-                <select value={props.race} onChange={props.handleRaceChange} name="race" className="stat-selector">
+            <div className="col-9">
+                <select value={props.race} onChange={props.handleRaceChange} name="race" className="form-control form-control-sm">
                     <option value="dwarf">Dwarf</option>
                     <option value="elf">Elf</option>
                     <option value="gnome">Gnome</option>
