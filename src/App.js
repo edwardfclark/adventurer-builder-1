@@ -5,6 +5,7 @@ import Name from './components/Name';
 import Alignment from './components/Alignment';
 import HitPoints from './components/HitPoints';
 import CharClass from './components/CharClass';
+import ArmorClass from './components/ArmorClass';
 import {statsObj, raceObj, classObj} from './objects';
 
 // App is the parent component for everything.
@@ -31,6 +32,15 @@ class App extends Component {
         charisma: {input: 10, race: 0, total: 10}
       },
       points: 0,
+      ac: {
+        armor: 0,
+        shield: 0,
+        deflection: 0,
+        dodge: 0,
+        luck: 0,
+        sacred: 0,
+        natural: 0
+      },
       raceModActive: true
     }
   }
@@ -172,7 +182,15 @@ class App extends Component {
               </div>
               <div className="card">
                 <div className="card-body">
-                  <HitPoints />
+                  <HitPoints 
+                  level={this.state.level} 
+                  constitution={this.state.stats.constitution.total} 
+                  hd={this.state.hd}
+                  />
+                  <ArmorClass 
+                  ac={this.state.ac}
+                  dexterity={this.state.stats.dexterity.total}
+                  />
                 </div>
               </div>
                 
