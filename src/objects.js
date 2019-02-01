@@ -24,15 +24,59 @@ let statsObj = {
   
   // This object shows the stat modifiers for all the Core races. Default is Human. If the user selects a race, this object is used to modify the Stats component.
   let raceObj = {
-    "dwarf": { raceModActive: false, mods: { constitution: "2", wisdom: "2", charisma: "-2" }},
-    "elf": { raceModActive: false, mods: { dexterity: "2", constitution: "-2", intelligence: "2" }},
-    "gnome": { raceModActive: false, mods: { strength: "-2", constitution: "2", charisma: "2" }},
-    "half-elf": { raceModActive: true },
-    "half-orc": { raceModActive: true },
-    "halfling": { raceModActive: false, mods: { strength: "-2", dexterity: "2", charisma: "2" }},
-    "human": { raceModActive: true },
-    "other": { raceModActive: true }
-  };
+    "dwarf": { 
+        raceModActive: false,
+        mods: { 
+            constitution: "2", 
+            wisdom: "2", 
+            charisma: "-2" 
+            }, 
+        size: "medium"
+    },
+    "elf": { 
+        raceModActive: false,
+        mods: { 
+            dexterity: "2", 
+            constitution: "-2", 
+            intelligence: "2" 
+        }, 
+        size: "medium"
+    },
+    "gnome": { 
+        raceModActive: false,
+        mods: { 
+            strength: "-2", 
+            constitution: "2", 
+            charisma: "2" 
+            },
+        size: "small"
+    },
+    "half-elf": { 
+        raceModActive: true, 
+        size: "medium"
+    },
+    "half-orc": { 
+        raceModActive: true, 
+        size: "medium" 
+    },
+    "halfling": { 
+        raceModActive: false,
+         mods: { 
+            strength: "-2",
+            dexterity: "2",
+            charisma: "2" 
+        },
+        size: "small"
+    },
+    "human": { 
+        raceModActive: true, 
+        size: "medium"
+    },
+    "other": { 
+        raceModActive: true, 
+        size: "medium" 
+    }
+};
 
 let classObj = {
     "cleric": {

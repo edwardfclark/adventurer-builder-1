@@ -3,9 +3,18 @@
     margin: 0;
 }
 
- 
+#defense p, #defense label {
+    margin-bottom: 5px;
+}
+
+ .card {
+     margin-bottom: 10px;
+ }
 
 .container {
     margin-top: 20px;
 }
 
+label {
+    font-weight: 500;
+}

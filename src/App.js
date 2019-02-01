@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import Stats from './components/Stats';
-import Race from './components/Race';
-import Name from './components/Name';
-import Alignment from './components/Alignment';
-import HitPoints from './components/HitPoints';
-import CharClass from './components/CharClass';
-import ArmorClass from './components/ArmorClass';
+import Stats from './components/stats/Stats';
+import Information from './components/Information';
+import Defense from './components/Defense';
+import Offense from './components/Offense';
 import {statsObj, raceObj, classObj} from './objects';
 
 // App is the parent component for everything.
@@ -23,6 +20,7 @@ class App extends Component {
       charClass: "fighter",
       hd: 10,
       bab: 1,
+      size: "medium",
       stats: {
         strength: {input: 10, race: 0, total: 10},
         dexterity: {input: 10, race: 0, total: 10},
@@ -39,10 +37,16 @@ class App extends Component {
         dodge: 0,
         luck: 0,
         sacred: 0,
-        natural: 0
+        natural: 0,
+        morale: 0,
+        insight: 0
       },
       raceModActive: true
     }
+  }
+
+  calculateStatMod = (stat) => {
+    return Math.floor((stat-10)/2);
   }
 
   // This method turns the Name input into a controlled component.
@@ -81,10 +85,13 @@ class App extends Component {
       newStats[stat]["total"] = newStats[stat]["input"] + newStats[stat]["race"];
     }
 
+    
+
     this.setState({
       race: event.target.value,
       stats: newStats,
-      raceModActive: raceObj[event.target.value]["raceModActive"]
+      raceModActive: raceObj[event.target.value]["raceModActive"],
+      size: raceObj[event.target.value]["size"]
     })
   }
 
@@ -142,26 +149,18 @@ class App extends Component {
 
               <div className="card">
 
-                <div className="card-header">
-                  <Name 
-                    handleNameChange={this.handleNameChange}
-                  />
-                  <Alignment 
+                <div className="card-header" id="information">
+                  <Information 
+                    race={this.state.race}
                     alignment={this.state.alignment}
-                    handleAlignmentChange={this.handleAlignmentChange}
-                  />
-                  <Race 
-                    id="race" 
-                    race={this.state.race} 
-                    handleRaceChange={this.handleRaceChange}
-                  />
-                  <CharClass 
                     charClass={this.state.charClass}
+                    handleRaceChange={this.handleRaceChange}
+                    handleNameChange={this.handleNameChange}
                     handleCharClassChange={this.handleCharClassChange}
                   />
                 </div>
 
-                <div className="card-body">
+                <div className="card-body" id="stats">
                   <Stats 
                     race={this.state.race} 
                     stats={this.state.stats} 
@@ -181,18 +180,24 @@ class App extends Component {
 
               </div>
               <div className="card">
-                <div className="card-body">
-                  <HitPoints 
-                  level={this.state.level} 
-                  constitution={this.state.stats.constitution.total} 
-                  hd={this.state.hd}
-                  />
-                  <ArmorClass 
-                  ac={this.state.ac}
-                  dexterity={this.state.stats.dexterity.total}
+                <div className="card-body" id="defense">
+                  <Defense 
+                    level={this.state.level}
+                    hd={this.state.hd}
+                    ac={this.state.ac}
+                    stats={this.state.stats}
+                    calculateStatMod={this.calculateStatMod}
+                    charClass={this.state.charClass}
+                    classObj={classObj}
+                    bab={this.state.bab}
+                    size={this.state.size}
                   />
                 </div>
+                <div className="card-footer" id="offense">
+                  <Offense />
+                </div>
               </div>
+
                 
             </div> {/* This is the end of the column.*/}
             
