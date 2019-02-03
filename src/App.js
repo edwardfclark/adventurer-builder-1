@@ -3,6 +3,7 @@ import Stats from './components/stats/Stats';
 import Information from './components/Information';
 import Defense from './components/Defense';
 import Offense from './components/Offense';
+import SkillsTable from './components/SkillsTable';
 import {statsObj, raceObj, classObj} from './objects';
 
 // App is the parent component for everything.
@@ -154,7 +155,7 @@ class App extends Component {
     return (
       <div className="container">
         <div className="row">
-            <div className="col-4"> {/* This is the lefthand column. */}
+            <div className="col-4"> {/* This is column 1. */}
 
               <div className="card">
 
@@ -216,8 +217,12 @@ class App extends Component {
                 
             </div> {/* This is the end of the column.*/}
             
-              <div className="col-8"> {/* This is the righthand column. */}
-                <p>Content in the right column.</p>
+              <div className="col-8"> {/* This is column 2. */}
+                
+                <SkillsTable 
+                  charClass={this.state.charClass}
+                />
+                
               </div>
         </div> {/* This is the end of the row.*/}
       </div> 
