@@ -1,7 +1,21 @@
 import React from 'react';
+import AttackBonuses from './offense/AttackBonuses';
+import CMB from './offense/CMB';
 
 const Offense = (props) => {
-    return <p>This is not the greatest div in the world. This is just a tribute.</p>
+    return (
+        <React.Fragment>
+            <AttackBonuses 
+                bab={props.bab}
+                dexMod={props.dexMod}
+                strMod={props.strMod}
+            />
+            <CMB 
+                bab={props.bab}
+                strMod={props.strMod}
+            />
+        </React.Fragment>
+    );
 }
 
 export default Offense;

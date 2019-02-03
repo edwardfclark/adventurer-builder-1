@@ -8,10 +8,10 @@ const ArmorClass = (props) => {
     return (
         <React.Fragment>
             <div className="row">
-                <div className="col-3">
+                <div className="col-4">
                     <label>AC: </label>
                 </div>
-                <div className="col-3">
+                <div className="col-4">
                     <p>{armor+
                         shield+
                         deflection+
@@ -25,7 +25,13 @@ const ArmorClass = (props) => {
             </div>
             <div className="row">
                 <div className="col">
-                    <p>{`FF: ${armor+shield+deflection+luck+sacred+natural+10}, Touch: ${dex+luck+deflection+dodge+sacred+10}, FF-Touch: ${10}`}</p>
+                    <p><label>FF:</label> {armor+shield+deflection+luck+sacred+natural+10}</p>
+                </div>
+                <div className="col">
+                    <p><label>Touch:</label> {dex+luck+deflection+dodge+sacred+10}</p>
+                </div>
+                <div className="col">
+                    <p><label>FF-T:</label> {10}</p>
                 </div>
             </div>
         </React.Fragment>

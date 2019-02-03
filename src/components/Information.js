@@ -22,6 +22,8 @@ const Information = (props) => {
             <CharClass 
                 charClass={props.charClass}
                 handleCharClassChange={props.handleCharClassChange}
+                level={props.level}
+                handleLevelChange={props.handleLevelChange}
             />
         </React.Fragment>
     );

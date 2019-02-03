@@ -26,7 +26,7 @@ const Saves = (props) => {
                 <p><label>Fort:</label> {calculateSave(hero.fort, props.conMod, props.level)}</p>
             </div>
             <div className="col">
-                <p><label>Ref:</label> {calculateSave(hero.ref, props.dexMod, props.level)}</p>
+                <p><label>Reflex:</label> {calculateSave(hero.ref, props.dexMod, props.level)}</p>
             </div>
             <div className="col">
                 <p><label>Will:</label> {calculateSave(hero.will, props.wisMod, props.level)}</p>

@@ -11,10 +11,10 @@ const HitPoints = (props) => {
 
     return (
         <div className="row">
-            <div className="col-3">
+            <div className="col-4">
                 <label>HP: </label>
             </div>
-            <div className="col-3">
+            <div className="col-4">
                 <p>{hp}</p>
             </div>
             

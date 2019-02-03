@@ -3,18 +3,33 @@
     margin: 0;
 }
 
-#defense p, #defense label {
-    margin-bottom: 5px;
-}
 
- .card {
-     margin-bottom: 10px;
- }
+.card {
+    margin-bottom: 10px;
+}
 
 .container {
     margin-top: 20px;
 }
 
+.card-footer {
+    padding-bottom: 5px;
+}
+
 label {
     font-weight: 500;
+}
+
+
+#defense p, #defense label {
+    margin-bottom: 5px;
+}
+
+.col p {
+ margin-bottom: 0;
+
+}
+
+.card-footer p {
+    margin-bottom: 0;
 }

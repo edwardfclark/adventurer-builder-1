@@ -120,6 +120,15 @@ class App extends Component {
     });
   }
 
+  // handleLevelChange updates the state to set the hero's level based on the input in the CharClass component.
+  handleLevelChange = (event) => {
+    this.setState({
+      level: parseInt(event.target.value),
+      bab: Math.floor(classObj[this.state.charClass]["bab"] * parseInt(event.target.value))
+    })
+  }
+
+  // handleStatsChange updates the input values in state and calculates the total points cost of the character's stat array.
   handleStatsChange = (event) => {
     console.log(`User has changed ${event.target.id} value to ${event.target.value}. Mod should be ${Math.floor((event.target.value-10)/2)}.`);
 
@@ -145,7 +154,7 @@ class App extends Component {
     return (
       <div className="container">
         <div className="row">
-            <div className="col-4">
+            <div className="col-4"> {/* This is the lefthand column. */}
 
               <div className="card">
 
@@ -157,6 +166,8 @@ class App extends Component {
                     handleRaceChange={this.handleRaceChange}
                     handleNameChange={this.handleNameChange}
                     handleCharClassChange={this.handleCharClassChange}
+                    level={this.state.level}
+                    handleLevelChange={this.handleLevelChange}
                   />
                 </div>
 
@@ -194,14 +205,18 @@ class App extends Component {
                   />
                 </div>
                 <div className="card-footer" id="offense">
-                  <Offense />
+                  <Offense 
+                    bab={this.state.bab}
+                    strMod={this.calculateStatMod(this.state.stats.strength.total)}
+                    dexMod={this.calculateStatMod(this.state.stats.dexterity.total)}
+                  />
                 </div>
               </div>
 
                 
             </div> {/* This is the end of the column.*/}
             
-              <div className="col-8">
+              <div className="col-8"> {/* This is the righthand column. */}
                 <p>Content in the right column.</p>
               </div>
         </div> {/* This is the end of the row.*/}

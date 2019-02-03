@@ -6,7 +6,7 @@ const CharClass = (props) => {
             <div className="col-3">
                 <label htmlFor="character-class">Class: </label>
             </div>
-            <div className="col-9">
+            <div className="col-6">
             <select id="character-class" defaultValue={props.charClass} onChange={props.handleCharClassChange} className="form-control form-control-sm">
                 <option value="cleric">Cleric</option>
                 <option value="bard">Bard</option>
@@ -20,6 +20,16 @@ const CharClass = (props) => {
                 <option value="sorcerer">Sorcerer</option>
                 <option value="wizard">Wizard</option>
             </select>
+            </div>
+            <div className="col-3">
+                <input 
+                    type="number" 
+                    className="form-control form-control-sm"
+                    min="1"
+                    max="20"
+                    value={props.level}
+                    onChange={props.handleLevelChange}
+                />
             </div>
         </div>
     );
