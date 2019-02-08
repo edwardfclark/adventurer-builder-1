@@ -13,7 +13,7 @@ const SkillsTable = (props) => {
         ) : (null)
     });
 
-    // console.log("Skills: ", skillsList)
+    
     return (
         <div className="card">
             <div className="card-header">

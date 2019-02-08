@@ -23,12 +23,36 @@ class App extends Component {
       bab: 1,
       size: "medium",
       stats: {
-        strength: {input: 10, race: 0, total: 10},
-        dexterity: {input: 10, race: 0, total: 10},
-        constitution: {input: 10, race: 0, total: 10},
-        intelligence: {input: 10, race: 0, total: 10},
-        wisdom: {input: 10, race: 0, total: 10},
-        charisma: {input: 10, race: 0, total: 10}
+        strength: {
+          input: 10, 
+          race: 0, 
+          total: 10
+        },
+        dexterity: {
+          input: 10, 
+          race: 0, 
+          total: 10
+        },
+        constitution: {
+          input: 10, 
+          race: 0, 
+          total: 10
+        },
+        intelligence: {
+          input: 10, 
+          race: 0, 
+          total: 10
+        },
+        wisdom: {
+          input: 10, 
+          race: 0, 
+          total: 10
+        },
+        charisma: {
+          input: 10, 
+          race: 0, 
+          total: 10
+        }
       },
       points: 0,
       ac: {
