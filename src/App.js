@@ -54,6 +54,44 @@ class App extends Component {
           total: 10
         }
       },
+      skills: {
+        "Acrobatics": 0,
+        "Appraise": 0,
+        "Bluff": 0,
+        "Climb": 0,
+        "Craft": 0,
+        "Diplomacy": 0,
+        "Disable Device": 0,
+        "Disguise": 0,
+        "Escape Artist": 0,
+        "Fly": 0,
+        "Handle Animal": 0,
+        "Heal": 0,
+        "Intimidate": 0,
+        "Kn: Arcana": 0,
+        "Kn: Dungeoneering": 0,
+        "Kn: Engineering": 0,
+        "Kn: Geography": 0,
+        "Kn: History": 0,
+        "Kn: Local": 0,
+        "Kn: Nature": 0,
+        "Kn: Nobility": 0,
+        "Kn: Planes": 0,
+        "Kn: Religion": 0,
+        "Linguistics": 0,
+        "Perception": 0,
+        "Perform": 0,
+        "Profession": 0,
+        "Ride": 0,
+        "Sense Motive": 0,
+        "Sleight of Hand": 0,
+        "Spellcraft": 0,
+        "Stealth": 0,
+        "Survival": 0,
+        "Swim": 0,
+        "Use Magic Device": 0
+      },
+      skillsFilter: "class",
       points: 0,
       ac: {
         armor: 0,
@@ -81,10 +119,29 @@ class App extends Component {
     })
   }
 
+  // This method turns the Alignment input into a controlled component.
   handleAlignmentChange = (event) => {
     this.setState({
       alignment: event.target.value
     })
+  }
+
+  // This method turns every Skill Rank input into a controlled component.
+  handleSkillRankChange = (event, skill) => {
+    // Create a copy of Skills before setting state.
+    let clonedSkills = Object.assign({}, this.state.skills);
+    clonedSkills[skill] = event.target.value;
+
+    this.setState({
+      skills: clonedSkills
+    })
+  }
+
+  // This method alters the skillsFilter key in state.
+  handleSkillFilterChange = (event, filter) => {
+    if (event.target.value === "on") {
+      this.setState({skillsFilter: filter});
+    }
   }
 
   // This method is passed to Race as a prop and is used to change the state of the App component based on a selector.
@@ -177,9 +234,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
-            <div className="col-4"> {/* This is column 1. */}
+            <div className="col-3"> {/* This is column 1. */}
 
               <div className="card">
 
@@ -241,10 +298,17 @@ class App extends Component {
                 
             </div> {/* This is the end of the column.*/}
             
-              <div className="col-8"> {/* This is column 2. */}
+              <div className="col-9"> {/* This is column 2. */}
                 
                 <SkillsTable 
                   charClass={this.state.charClass}
+                  level={this.state.level}
+                  stats={this.state.stats}
+                  calculateStatMod={this.calculateStatMod}
+                  skills={this.state.skills}
+                  handleSkillRankChange={this.handleSkillRankChange}
+                  handleSkillFilterChange={this.handleSkillFilterChange}
+                  skillsFilter={this.state.skillsFilter}
                 />
                 
               </div>
